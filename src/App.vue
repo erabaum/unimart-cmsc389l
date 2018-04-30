@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-    <h1>{{ msg }}</h1>
-    <p>{{ desc }}</p>
+    <v-toolbar>
+      <router-link to="/"><v-toolbar-title>UniMart</v-toolbar-title></router-link>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <router-link to="/browse"><v-btn flat>Browse</v-btn></router-link>
+      </v-toolbar-items>
+    </v-toolbar>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -22,9 +27,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 h1, h2 {
