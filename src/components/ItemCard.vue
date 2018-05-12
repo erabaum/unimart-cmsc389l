@@ -7,7 +7,7 @@
       <div>Seller: {{ item.seller_name }} &lt;{{ item.seller_email }}&gt;</div><br />
       <div>{{ item.description }}</div>
       <v-card-actions>
-        <router-link :to="'/item/' + item.title"><v-btn flat>Explore</v-btn></router-link>
+        <v-btn flat :to="/item/ + id">Explore</v-btn>
       </v-card-actions>
     </v-card>
   </div>
@@ -16,7 +16,7 @@
 <script>
 export default {
   name: 'item-card',
-  props: ['id'],
+  props: ['item', 'id'],
   data () {
     return {
       item: {
@@ -24,43 +24,14 @@ export default {
         seller_name: "Not Set",
         seller_email: "Not Set",
         description: "Not Set"
-      },
-      items: [
-        {
-          title: "Art Attk Tix",
-          seller_name: "Eric",
-          seller_email: "erabaum@mock.me",
-          description: "This are Art Attack tickets for 2018"
-        },
-        {
-          title: "Michigan Game Tix",
-          seller_name: "Colin",
-          seller_email: "colink@mock.me",
-          description: "This is the description for the Mich v maryland football game"
-        }
-      ]
+      }
     }
-  },
-  methods: {
-    getItem: function () {
-      var item_id = this.id;
-
-      console.log(this.items.find((e) => {
-        return item_id == e.seller_name;
-      }));
-
-      this.item = this.items.find((e) => {
-        return item_id == e.seller_name;
-      });
-    }
-  },
-  beforeMount: function () {
-     this.getItem();
   }
 }
 </script>
 
 <style>
 #item-card {
+  padding: 5px
 }
 </style>
