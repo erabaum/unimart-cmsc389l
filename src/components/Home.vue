@@ -2,7 +2,7 @@
   <div id="home">
     <v-container>
       <h1 class="text-md-center">Welcome to UniMart!</h1>
-      <p class="text-md-center">Your go-to website for buying ans selling school related materials incliding</p>
+      <p class="text-md-center">Your go-to website for buying and selling school related materials including</p>
       <v-flex md4 offset-md4>
         <v-list>
           <v-list-tile>Tickets</v-list-tile>
